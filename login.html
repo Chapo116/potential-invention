@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Login - ApexBroker</title>
+<link rel="stylesheet" href="/css/auth.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="auth-container">
+  <div class="auth-box">
+    <div class="auth-header">
+      <h1><i class="fas fa-chart-line"></i> ApexBroker</h1>
+      <p>Welcome back! Please login to your account.</p>
+    </div>
+    <form id="login-form">
+      <div class="form-group"><label><i class="fas fa-envelope"></i> Email</label><input type="email" id="login-email" placeholder="Enter your email" required></div>
+      <div class="form-group"><label><i class="fas fa-lock"></i> Password</label><input type="password" id="login-password" placeholder="Enter your password" required></div>
+      <div id="login-error" class="error-message"></div>
+      <button type="submit" class="submit-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+    </form>
+    <div class="auth-footer"><p>Don't have an account? <a href="/register">Register here</a></p></div>
+    <div class="demo-box">
+      <p>🔑 <strong>Demo Credentials</strong></p>
+      <p>User: <code>john@apexbroker.com</code> / <code>secure123</code></p>
+      <p>Admin: <code>admin@apexbroker.com</code> / <code>admin123</code></p>
+    </div>
+  </div>
+</div>
+<script src="/js/config.js"></script><script src="/js/auth.js"></script>
+</body></html>

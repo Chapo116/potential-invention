@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Register - ApexBroker</title>
+<link rel="stylesheet" href="/css/auth.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="auth-container">
+  <div class="auth-box">
+    <div class="auth-header">
+      <h1><i class="fas fa-chart-line"></i> ApexBroker</h1>
+      <p>Create your account and start investing today!</p>
+    </div>
+    <form id="register-form">
+      <div class="form-group"><label><i class="fas fa-user"></i> Full Name</label><input type="text" id="register-name" placeholder="Enter your full name" required></div>
+      <div class="form-group"><label><i class="fas fa-envelope"></i> Email</label><input type="email" id="register-email" placeholder="Enter your email" required></div>
+      <div class="form-group"><label><i class="fas fa-phone"></i> Phone (Optional)</label><input type="tel" id="register-phone" placeholder="Enter your phone number"></div>
+      <div class="form-group"><label><i class="fas fa-lock"></i> Password</label><input type="password" id="register-password" placeholder="Enter your password" required minlength="6"></div>
+      <div class="form-group"><label><i class="fas fa-users"></i> Referral Code (Optional)</label><input type="text" id="register-referral" placeholder="Enter referral code if you have one"></div>
+      <div id="register-error" class="error-message"></div>
+      <div id="register-success" class="success-message"></div>
+      <button type="submit" class="submit-btn"><i class="fas fa-user-plus"></i> Register</button>
+    </form>
+    <div class="auth-footer"><p>Already have an account? <a href="/">Login here</a></p></div>
+  </div>
+</div>
+<script src="/js/config.js"></script><script src="/js/auth.js"></script>
+</body></html>

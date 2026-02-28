@@ -1,0 +1,28 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.auth-container{width:100%;max-width:450px}
+.auth-box{background:white;border-radius:20px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.auth-header{text-align:center;margin-bottom:30px}
+.auth-header h1{color:#667eea;font-size:32px;margin-bottom:10px}
+.auth-header p{color:#666;font-size:14px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;color:#333;font-weight:600;margin-bottom:8px;font-size:14px}
+.form-group label i{margin-right:5px;color:#667eea}
+.form-group input{width:100%;padding:12px 15px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;transition:border-color .3s}
+.form-group input:focus{outline:none;border-color:#667eea}
+.error-message{color:#e74c3c;background:#ffebee;padding:10px;border-radius:8px;margin-bottom:15px;font-size:14px;display:none}
+.error-message:not(:empty){display:block}
+.success-message{color:#27ae60;background:#e8f5e9;padding:10px;border-radius:8px;margin-bottom:15px;font-size:14px;display:none}
+.success-message:not(:empty){display:block}
+.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(102,126,234,.4)}
+.auth-footer{text-align:center;margin-top:25px;padding-top:20px;border-top:1px solid #e0e0e0}
+.auth-footer p{color:#666;font-size:14px}
+.auth-footer a{color:#667eea;text-decoration:none;font-weight:600}
+.demo-box{margin-top:20px;background:#f0f4ff;border:1px solid #c7d2fe;border-radius:10px;padding:14px;font-size:13px;color:#444}
+.demo-box p{margin-bottom:4px}
+.demo-box code{background:#e0e7ff;color:#4338ca;padding:2px 6px;border-radius:4px;font-weight:600}
+.notification{position:fixed;top:20px;right:20px;padding:14px 20px;border-radius:8px;color:white;font-weight:600;z-index:9999;transition:opacity .3s}
+.notification.success{background:#27ae60}
+.notification.error{background:#e74c3c}
+.notification.info{background:#3498db}

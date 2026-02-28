@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard - ApexBroker</title><link rel="stylesheet" href="/css/dashboard.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></head>
+<body><div class="dashboard-container">
+<aside class="sidebar"><div class="logo"><h2><i class="fas fa-chart-line"></i> ApexBroker</h2></div>
+<nav class="sidebar-nav">
+<a href="#" class="nav-item active" data-page="overview"><i class="fas fa-home"></i><span>Overview</span></a>
+<a href="#" class="nav-item" data-page="investments"><i class="fas fa-coins"></i><span>Investments</span></a>
+<a href="#" class="nav-item" data-page="transactions"><i class="fas fa-exchange-alt"></i><span>Transactions</span></a>
+<a href="#" class="nav-item" data-page="deposit"><i class="fas fa-wallet"></i><span>Deposit</span></a>
+<a href="#" class="nav-item" data-page="withdraw"><i class="fas fa-money-bill-wave"></i><span>Withdraw</span></a>
+<a href="#" class="nav-item" data-page="referrals"><i class="fas fa-users"></i><span>Referrals</span></a>
+<a href="#" class="nav-item" data-page="profile"><i class="fas fa-user"></i><span>Profile</span></a>
+<a href="#" class="nav-item logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+</nav></aside>
+<main class="main-content">
+<header class="dashboard-header"><div class="header-left"><button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button><h1 id="page-title">Dashboard Overview</h1></div><div class="header-right"><div class="user-info"><span id="user-name">Loading...</span><div class="user-avatar"><i class="fas fa-user-circle"></i></div></div></div></header>
+<div class="content-area">
+<!-- Overview Page -->
+<div class="page-content" id="overview-page">
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon balance"><i class="fas fa-wallet"></i></div><div class="stat-info"><p class="stat-label">Current Balance</p><h3 class="stat-value" id="stat-balance">$0.00</h3></div></div>
+<div class="stat-card"><div class="stat-icon invested"><i class="fas fa-chart-line"></i></div><div class="stat-info"><p class="stat-label">Total Invested</p><h3 class="stat-value" id="stat-invested">$0.00</h3></div></div>
+<div class="stat-card"><div class="stat-icon profit"><i class="fas fa-arrow-up"></i></div><div class="stat-info"><p class="stat-label">Total Profit</p><h3 class="stat-value" id="stat-profit">$0.00</h3></div></div>
+<div class="stat-card"><div class="stat-icon active"><i class="fas fa-tasks"></i></div><div class="stat-info"><p class="stat-label">Active Investments</p><h3 class="stat-value" id="stat-active">0</h3></div></div>
+</div>
+<div class="quick-actions"><h2>Quick Actions</h2><div class="action-buttons">
+<button class="action-btn" data-page="investments"><i class="fas fa-plus-circle"></i> New Investment</button>
+<button class="action-btn" data-page="deposit"><i class="fas fa-download"></i> Deposit Funds</button>
+<button class="action-btn" data-page="withdraw"><i class="fas fa-upload"></i> Withdraw</button>
+</div></div>
+<div class="recent-activity"><h2>Recent Investments</h2><div id="recent-investments-list"></div></div>
+</div>
+<!-- Investments Page -->
+<div class="page-content hidden" id="investments-page">
+<div class="investment-plans-section"><h2>Choose Your Investment Plan</h2><div class="plans-grid" id="plans-grid"></div></div>
+<div class="my-investments-section"><h2>My Investments</h2><div id="investments-list"></div></div>
+</div>
+<!-- Transactions Page -->
+<div class="page-content hidden" id="transactions-page">
+<h2>Transaction History</h2>
+<div class="transactions-filters"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="deposit">Deposits</button><button class="filter-btn" data-filter="withdrawal">Withdrawals</button></div>
+<div id="transactions-list"></div></div>
+<!-- Deposit Page -->
+<div class="page-content hidden" id="deposit-page">
+<div class="form-container"><h2>Deposit Funds</h2><form id="deposit-form">
+<div class="form-group"><label>Amount (USD)</label><input type="number" id="deposit-amount" placeholder="Enter amount" min="10" required></div>
+<div class="form-group"><label>Transaction Hash (Optional)</label><input type="text" id="deposit-hash" placeholder="Enter transaction hash"></div>
+<div class="info-box"><i class="fas fa-info-circle"></i><p>After submitting, an admin will review and approve your deposit.</p></div>
+<button type="submit" class="submit-btn">Submit Deposit Request</button></form></div></div>
+<!-- Withdraw Page -->
+<div class="page-content hidden" id="withdraw-page">
+<div class="form-container"><h2>Withdraw Funds</h2><div class="balance-display"><p>Available Balance</p><h3 id="withdraw-balance">$0.00</h3></div>
+<form id="withdraw-form">
+<div class="form-group"><label>Amount (USD)</label><input type="number" id="withdraw-amount" placeholder="Enter amount" min="10" required></div>
+<div class="info-box"><i class="fas fa-info-circle"></i><p>Withdrawal requests are processed within 24-48 hours.</p></div>
+<button type="submit" class="submit-btn">Request Withdrawal</button></form></div></div>
+<!-- Referrals Page -->
+<div class="page-content hidden" id="referrals-page">
+<h2>Referral Program</h2>
+<div class="referral-code-section">
+<div class="referral-card"><h3>Your Referral Code</h3><div class="code-display"><input type="text" id="referral-code" readonly><button class="copy-btn" id="copy-referral"><i class="fas fa-copy"></i> Copy</button></div><p>Share this code and earn bonuses on every investment!</p></div>
+<div class="referral-stats"><div class="stat"><i class="fas fa-users"></i><div><p>Total Referrals</p><h4 id="total-referrals">0</h4></div></div><div class="stat"><i class="fas fa-dollar-sign"></i><div><p>Total Earnings</p><h4 id="referral-earnings">$0.00</h4></div></div></div>
+</div><div id="referrals-list"></div></div>
+<!-- Profile Page -->
+<div class="page-content hidden" id="profile-page">
+<div class="form-container"><h2>My Profile</h2><form id="profile-form">
+<div class="form-group"><label>Full Name</label><input type="text" id="profile-name" required></div>
+<div class="form-group"><label>Email</label><input type="email" id="profile-email" readonly></div>
+<div class="form-group"><label>Phone</label><input type="tel" id="profile-phone"></div>
+<div class="form-group"><label>Member Since</label><input type="text" id="profile-created" readonly></div>
+<button type="submit" class="submit-btn">Update Profile</button></form></div></div>
+</div></main></div>
+<!-- Investment Modal -->
+<div id="investment-modal" class="modal"><div class="modal-content"><span class="close">&times;</span><h2>Create Investment</h2><div id="selected-plan-info"></div>
+<form id="create-investment-form"><div class="form-group"><label>Investment Amount (USD)</label><input type="number" id="investment-amount" required><small id="amount-hint"></small></div>
+<button type="submit" class="submit-btn">Confirm Investment</button></form></div></div>
+<script src="/js/config.js"></script><script src="/js/dashboard.js"></script></body></html>
