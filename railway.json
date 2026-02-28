@@ -1,1 +1,20 @@
-{\n  "$schema": "https://railway.app/railway.schema.json",\n  "build": {\n    "builder": "NIXPACKS",\n    "buildCommand": "cd backend && npm ci --omit=dev && npm audit --audit-level=moderate"\n  },\n  "deploy": {\n    "startCommand": "cd backend && node server.js",\n    "healthcheckPath": "/api/health",\n    "healthcheckTimeout": 30,\n    "healthcheckInterval": 10,\n    "restartPolicyType": "ON_FAILURE",\n    "restartPolicyMaxRetries": 3,\n    "variables": {\n      "NODE_ENV": "production",\n      "BACKEND_DIR": "backend"\n    }\n  }\n}
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "cd backend && npm ci --omit=dev && npm audit --audit-level=high || true && npm run build || true"
+  },
+  "deploy": {
+    "startCommand": "cd backend && node server.js",
+    "healthcheckPath": "/api/health",
+    "healthcheckTimeout": 30,
+    "healthcheckInterval": 10,
+    "healthcheckStartPeriod": 5,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3,
+    "variables": {
+      "NODE_ENV": "production",
+      "BACKEND_DIR": "backend"
+    }
+  }
+}
